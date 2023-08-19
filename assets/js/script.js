@@ -1,0 +1,5 @@
+playGame();
+
+checkWinner();
+
+updateScore(); 

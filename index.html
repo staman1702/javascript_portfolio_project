@@ -1,12 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <title>Rock Paper Scissors Lizard Spock</title>
+  </head>
+  <body>
+    <header>
+      <h2>Rock, Paper, Scissors, Lizard, Spock</h2>
+    </header>
+    <div class="game-area">
+      <div class="player-area">
+        <p>Make a choice:</p>
+        <button aria-label="Rock" data-choice="0" class="control">
+          Rock <i class="fa-solid fa-hand-back-fist"></i>
+        </button>
+        <button aria-label="Paper" data-choice="0" class="control">
+          Paper <i class="fa-solid fa-hand"></i>
+        </button>
+        <button aria-label="Scissors" data-choice="0" class="control">
+          Scissors <i class="fa-solid fa-hand-scissors"></i>
+        </button>
+        <button aria-label="Lizard" data-choice="0" class="control">
+          Lizard <i class="fa-solid fa-hand-lizard"></i>
+        </button>
+        <button aria-label="Spock" data-choice="0" class="control">
+          Spock <i class="fa-solid fa-hand-spock"></i>
+        </button>
+      </div>
+      <div class="computer-area">
+        <p>Your opponent:</p>
+        <button aria-label="Rock" data-choice="0" class="control">
+          Rock <i class="fa-solid fa-hand-back-fist"></i>
+        </button>
+        <button aria-label="Paper" data-choice="0" class="control">
+          Paper <i class="fa-solid fa-hand"></i>
+        </button>
+        <button aria-label="Scissors" data-choice="0" class="control">
+          Scissors <i class="fa-solid fa-hand-scissors"></i>
+        </button>
+        <button aria-label="Lizard" data-choice="0" class="control">
+          Lizard <i class="fa-solid fa-hand-lizard"></i>
+        </button>
+        <button aria-label="Spock" data-choice="0" class="control">
+          Spock <i class="fa-solid fa-hand-spock"></i>
+        </button>
+      </div>
+    </div>
+
+    <div class="score-area">
+      <div id="messages"></div>
+      <div class="scores">
+        <h3>Your score: <span id="player-score">0</span></h3>
+        <h3>Computer score: <span id="computer-score">0</span></h3>
+      </div>
+    </div>
+    <script src="assets/js/script.js"></script>
+    <script
+      src="https://kit.fontawesome.com/97528b5a5b.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
