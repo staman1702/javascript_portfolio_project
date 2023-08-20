@@ -15,14 +15,14 @@ header {
     text-align: center;
 }
 
-.player-area {
+#player-area {
     background-color: lightblue;
     float: left;
     width: 45%;
     margin: 2.5%;
 }
 
-.computer-area {
+#computer-area {
     background-color: lightblue;
     float: right;
     width: 45%;
@@ -35,7 +35,8 @@ header {
     font-size: 1.2rem;
 }
 
-.control {
+.control,
+.response {
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -51,4 +52,10 @@ header {
     margin-right: auto;
     margin-top: 2%;
     text-align: center;
+}
+
+.active,
+.control:hover {
+    background-color: red;
+    color: white;
 }
