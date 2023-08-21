@@ -1,4 +1,4 @@
-
+const choices = ["rock", "paper", "scissors", "lizard", "spock"];
 var btns = document.getElementsByClassName("control");
 for (var i = 0; i < btns.length; i++) {
     btns[i].addEventListener("click", function () {
@@ -12,8 +12,25 @@ for (var i = 0; i < btns.length; i++) {
     });
 }
 
-playGame();
+function playGame(playerChoice) {
 
-checkWinner();
+    let computerChoice = Math.floor(Math.random() * 5);
+    let result = checkWinner(choice[computerChoice], choice[playerChoice]);
 
-updateScore();
+    updateScore(result);
+}
+
+/**
+ * Gets the playerChoice and the computerChoice
+ * directly from the dom, and returns the winner.
+ */
+function checkWinner() {
+
+
+
+}
+
+
+function updateScore(result) {
+
+}
