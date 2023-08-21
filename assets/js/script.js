@@ -15,18 +15,50 @@ for (var i = 0; i < btns.length; i++) {
 function playGame(playerChoice) {
 
     let computerChoice = Math.floor(Math.random() * 5);
-    let result = checkWinner(choice[computerChoice], choice[playerChoice]);
+    let result = checkWinner(choices[computerChoice], choices[playerChoice]);
 
     updateScore(result);
 }
 
 /**
  * Gets the playerChoice and the computerChoice
- * directly from the dom, and returns the winner.
+ * and returns the winner.
  */
 function checkWinner() {
 
+    let player = choices[playerChoice];
+    let computer = choices[computerChoice];
 
+    if (player === computer) {
+        return "Tie";
+    }
+    else if (player == 'rock') {
+        if (computer == 'paper') {
+            
+            return 
+
+        } else if ( computer == 'scissors'){
+            
+        } else if (computer == 'lizard'){
+
+        } else {
+
+        }
+    }
+
+    else if (player == 'paper') {
+        if (computer == 'rock') {
+
+            return;
+
+        } else if (computer == 'scissors') {
+
+        } else if (computer == 'lizard') {
+
+        } else {
+
+        }
+    }
 
 }
 
