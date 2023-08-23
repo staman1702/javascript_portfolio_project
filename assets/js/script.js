@@ -1,5 +1,5 @@
 const choices = ["rock", "paper", "scissors", "lizard", "spock"];
-var btns = document.getElementsByClassName("control");
+const btns = document.getElementsByClassName("control");
 for (var i = 0; i < btns.length; i++) {
     btns[i].addEventListener("click", function () {
         var current = document.getElementsByClassName("active");
@@ -15,7 +15,16 @@ for (var i = 0; i < btns.length; i++) {
 function playGame(playerChoice) {
 
     let computerChoice = Math.floor(Math.random() * 5);
-    let result = checkWinner(choices[computerChoice], choices[playerChoice]);
+
+    var responses = document.getElementsByClassName("response");
+    var currentResponse = document.getElementsByClassName("response active");
+    if (currentResponse.length > 0) {
+        currentResponse[0].className = currentResponse[0].className.replace(" active", "");
+    }
+    responses[computerChoice].className += " active";
+
+    //let result = checkWinner(choices[computerChoice], choices[playerChoice]);//
+    let result = checkWinner(computerChoice, playerChoice);
 
     updateScore(result);
 }
@@ -24,45 +33,50 @@ function playGame(playerChoice) {
  * Gets the playerChoice and the computerChoice
  * and returns the winner.
  */
-function checkWinner() {
+function checkWinner(computerChoice, playerChoice) {
 
-    let player = choices[playerChoice];
-    let computer = choices[computerChoice];
+    //let player = choices[playerChoice];//
+    //let computer = choices[computerChoice];//
+    let player = parseInt(playerChoice);
+    let computer = parseInt(computerChoice);
 
-    if (player === computer) {
-        return "Tie";
-    }
-    else if (player == 'rock') {
-        if (computer == 'paper') {
-            
-            return 
 
-        } else if ( computer == 'scissors'){
-            
-        } else if (computer == 'lizard'){
+    if (player > computer) {
+        document.getElementById("messages").innerText = "You have won this round!";
+        return "win";
 
-        } else {
-
-        }
     }
 
-    else if (player == 'paper') {
-        if (computer == 'rock') {
-
-            return;
-
-        } else if (computer == 'scissors') {
-
-        } else if (computer == 'lizard') {
-
-        } else {
-
-        }
+    else if (player === computer) {
+        document.getElementById("messages").innerText = "It's a tie.";
+        return "tie";
     }
+
+    else {
+        document.getElementById("messages").innerText = "You have lost this round :(";
+        return "loss";
+    }
+
+
 
 }
 
 
 function updateScore(result) {
 
+    let playerScore = parseInt(document.getElementById("player-score").innerText);
+    let computerScore = parseInt(document.getElementById("computer-score").innerText);
+    let outcome = result;
+
+    if (outcome === "win") {
+        document.getElementById("player-score").innerText = ++playerScore;
+    }
+
+    else if (outcome === "loss") {
+        document.getElementById("computer-score").innerText = ++computerScore;
+    }
+
+    else {
+
+    };
 }
