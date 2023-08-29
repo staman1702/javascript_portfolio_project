@@ -1,5 +1,6 @@
 const choices = ["rock", "paper", "scissors", "lizard", "spock"];
 const btns = document.getElementsByClassName("control");
+
 for (var i = 0; i < btns.length; i++) {
     btns[i].addEventListener("click", function () {
         var current = document.getElementsByClassName("active");
@@ -40,72 +41,73 @@ function checkWinner(computerChoice, playerChoice) {
 
     let player = choices[playerChoice];
     let computer = choices[computerChoice];
+    let message = document.getElementById("messages");
 
     if (player === computer) {
-        document.getElementById("messages").innerText = "It's a tie.";
+        message.innerText = "It's a tie. Play again!";
         return "tie";
     }
 
     else if (player === "rock") {
         if (computer === "paper") {
-            document.getElementById("messages").innerText = "Paper covers rock. You lose...";
+            message.innerText = "Paper covers rock. You lose...";
             return "loss";
         } else if (computer === "scissors") {
-            document.getElementById("messages").innerText = "Rock crushes scissors. You win!";
+            message.innerText = "Rock crushes scissors. You win!";
             return "win";
         } else if (computer === "lizard") {
-            document.getElementById("messages").innerText = "Rock crushes lizard. You win!";
+            message.innerText = "Rock crushes lizard. You win!";
             return "win";
         } else {
-            document.getElementById("messages").innerText = "Spock evaporates rock. You lose...";
+            message.innerText = "Spock evaporates rock. You lose...";
             return "loss";
         }
     }
 
     else if (player === "paper") {
         if (computer === "rock") {
-            document.getElementById("messages").innerText = "Paper covers rock. You win!";
+            message.innerText = "Paper covers rock. You win!";
             return "win";
         } else if (computer === "scissors") {
-            document.getElementById("messages").innerText = "Scissors cut paper. You lose...";
+            message.innerText = "Scissors cut paper. You lose...";
             return "loss";
         } else if (computer === "lizard") {
-            document.getElementById("messages").innerText = "Lizard eats paper. You lose...";
+            message.innerText = "Lizard eats paper. You lose...";
             return "loss";
         } else {
-            document.getElementById("messages").innerText = "Paper disproves spock. You win!";
+            message.innerText = "Paper disproves spock. You win!";
             return "win";
         }
     }
 
     else if (player === "scissors") {
         if (computer === "rock") {
-            document.getElementById("messages").innerText = "Rock crushes scissors. You lose...";
+            message.innerText = "Rock crushes scissors. You lose...";
             return "loss";
         } else if (computer === "paper") {
-            document.getElementById("messages").innerText = "Scissors cut paper. You win!";
+            message.innerText = "Scissors cut paper. You win!";
             return "win";
         } else if (computer === "lizard") {
-            document.getElementById("messages").innerText = "Scissors decapitate lizard. You win!";
+            message.innerText = "Scissors decapitate lizard. You win!";
             return "win";
         } else {
-            document.getElementById("messages").innerText = "Spock smashes scissors. You lose...";
+            message.innerText = "Spock smashes scissors. You lose...";
             return "loss";
         }
     }
 
     else if (player === "lizard") {
         if (computer === "rock") {
-            document.getElementById("messages").innerText = "Rock crushes lizard. You lose...";
+            message.innerText = "Rock crushes lizard. You lose...";
             return "loss";
         } else if (computer === "paper") {
-            document.getElementById("messages").innerText = "Lizard eats paper. You win!";
+            message.innerText = "Lizard eats paper. You win!";
             return "win";
         } else if (computer === "scissors") {
-            document.getElementById("messages").innerText = "Scissors decapitate lizard. You lose...";
+            message.innerText = "Scissors decapitate lizard. You lose...";
             return "loss";
         } else {
-            document.getElementById("messages").innerText = "Lizard poisons Spock. You win!";
+            message.innerText = "Lizard poisons Spock. You win!";
             return "win";
         }
     }
@@ -113,16 +115,16 @@ function checkWinner(computerChoice, playerChoice) {
     // player === "spock"
     else {
         if (computer === "rock") {
-            document.getElementById("messages").innerText = "Spock evaporates rock. You win!";
+            message.innerText = "Spock evaporates rock. You win!";
             return "win";
         } else if (computer === "paper") {
-            document.getElementById("messages").innerText = "Paper disproves spock. You lose...";
+            message.innerText = "Paper disproves spock. You lose...";
             return "loss";
         } else if (computer === "scissors") {
-            document.getElementById("messages").innerText = "Spock smashes scissors. You win!";
+            message.innerText = "Spock smashes scissors. You win!";
             return "win";
         } else {
-            document.getElementById("messages").innerText = "Lizard poisons Spock. You lose...";
+            message.innerText = "Lizard poisons Spock. You lose...";
             return "loss";
         }
     }
