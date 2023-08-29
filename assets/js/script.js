@@ -1,8 +1,9 @@
 // game-area section variable
 const choices = ["rock", "paper", "scissors", "lizard", "spock"];
+const btns = document.getElementsByClassName("control");
 
 // score-area section variable
-const btns = document.getElementsByClassName("control");
+const newGame = document.getElementById("NewGame");
 
 // event listener for player's choices
 for (var i = 0; i < btns.length; i++) {
@@ -16,6 +17,27 @@ for (var i = 0; i < btns.length; i++) {
         playGame(playerChoice);
     });
 }
+
+// event listener for new game
+newGame.addEventListener('click', function () {
+
+    let message = document.getElementById("messages");
+    message.innerText = "Start the game by making your choice.";
+    newGame.innerHTML = "Click to start New Game";
+
+    document.getElementById("player-score").innerText = 0;
+    document.getElementById("computer-score").innerText = 0;
+
+    for (var i = 0; i < btns.length; i++) {
+        btns[i].disabled = false;
+        var current = document.getElementsByClassName("active");
+        if (current.length > 0) {
+            current[0].className = current[0].className.replace(" active", "");
+        }
+    }
+
+});
+
 
 /**
  * Gets the playerChoice from event listener, generates computerChoice
@@ -53,70 +75,70 @@ function checkWinner(computerChoice, playerChoice) {
     let message = document.getElementById("messages");
 
     if (player === computer) {
-        message.innerText = "It's a tie. Play again!";
+        message.innerText = "It's a tie. Play the next round!";
         return "tie";
     }
 
     else if (player === "rock") {
         if (computer === "paper") {
-            message.innerText = "Paper covers rock. You lose...";
+            message.innerText = "Paper covers rock. You lose this round...";
             return "loss";
         } else if (computer === "scissors") {
-            message.innerText = "Rock crushes scissors. You win!";
+            message.innerText = "Rock crushes scissors. You win this round!";
             return "win";
         } else if (computer === "lizard") {
-            message.innerText = "Rock crushes lizard. You win!";
+            message.innerText = "Rock crushes lizard. You win this round!";
             return "win";
         } else {
-            message.innerText = "Spock evaporates rock. You lose...";
+            message.innerText = "Spock evaporates rock. You lose this round...";
             return "loss";
         }
     }
 
     else if (player === "paper") {
         if (computer === "rock") {
-            message.innerText = "Paper covers rock. You win!";
+            message.innerText = "Paper covers rock. You win this round!";
             return "win";
         } else if (computer === "scissors") {
-            message.innerText = "Scissors cut paper. You lose...";
+            message.innerText = "Scissors cut paper. You lose this round...";
             return "loss";
         } else if (computer === "lizard") {
-            message.innerText = "Lizard eats paper. You lose...";
+            message.innerText = "Lizard eats paper. You lose this round...";
             return "loss";
         } else {
-            message.innerText = "Paper disproves spock. You win!";
+            message.innerText = "Paper disproves spock. You win this round!";
             return "win";
         }
     }
 
     else if (player === "scissors") {
         if (computer === "rock") {
-            message.innerText = "Rock crushes scissors. You lose...";
+            message.innerText = "Rock crushes scissors. You lose this round...";
             return "loss";
         } else if (computer === "paper") {
-            message.innerText = "Scissors cut paper. You win!";
+            message.innerText = "Scissors cut paper. You win this round!";
             return "win";
         } else if (computer === "lizard") {
-            message.innerText = "Scissors decapitate lizard. You win!";
+            message.innerText = "Scissors decapitate lizard. You win this round!";
             return "win";
         } else {
-            message.innerText = "Spock smashes scissors. You lose...";
+            message.innerText = "Spock smashes scissors. You lose this round...";
             return "loss";
         }
     }
 
     else if (player === "lizard") {
         if (computer === "rock") {
-            message.innerText = "Rock crushes lizard. You lose...";
+            message.innerText = "Rock crushes lizard. You lose this round...";
             return "loss";
         } else if (computer === "paper") {
-            message.innerText = "Lizard eats paper. You win!";
+            message.innerText = "Lizard eats paper. You win this round!";
             return "win";
         } else if (computer === "scissors") {
-            message.innerText = "Scissors decapitate lizard. You lose...";
+            message.innerText = "Scissors decapitate lizard. You lose this round...";
             return "loss";
         } else {
-            message.innerText = "Lizard poisons Spock. You win!";
+            message.innerText = "Lizard poisons Spock. You win this round!";
             return "win";
         }
     }
@@ -124,16 +146,16 @@ function checkWinner(computerChoice, playerChoice) {
     // player === "spock"
     else {
         if (computer === "rock") {
-            message.innerText = "Spock evaporates rock. You win!";
+            message.innerText = "Spock evaporates rock. You win this round!";
             return "win";
         } else if (computer === "paper") {
-            message.innerText = "Paper disproves spock. You lose...";
+            message.innerText = "Paper disproves spock. You lose this round...";
             return "loss";
         } else if (computer === "scissors") {
-            message.innerText = "Spock smashes scissors. You win!";
+            message.innerText = "Spock smashes scissors. You win this round!";
             return "win";
         } else {
-            message.innerText = "Lizard poisons Spock. You lose...";
+            message.innerText = "Lizard poisons Spock. You lose this round...";
             return "loss";
         }
     }
@@ -163,4 +185,17 @@ function updateScore(result) {
     else {
 
     };
+
+    if (computerScore == 5 || playerScore == 5) {
+        for (var i = 0; i < btns.length; i++) {
+            btns[i].disabled = true;
+        }
+
+        if (computerScore == 5) {
+            newGame.innerHTML = "Computer won the Game. Click to start New Game";
+        }
+        else {
+            newGame.innerHTML = "You won the Game. Click to start New Game";
+        }
+    }
 }
