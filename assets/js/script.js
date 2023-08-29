@@ -22,7 +22,7 @@ for (var i = 0; i < btns.length; i++) {
 newGame.addEventListener('click', function () {
 
     let message = document.getElementById("messages");
-    message.innerText = "Start the game by making your choice.";
+    message.innerText = "Start the game by making your choice. First one to reach 5 points wins.";
     newGame.innerHTML = "Click to start New Game";
 
     document.getElementById("player-score").innerText = 0;
@@ -164,7 +164,7 @@ function checkWinner(computerChoice, playerChoice) {
 
 /**
  * Gets the result
- * and increments the score
+ * and increments the score, stopping it once one side gets to 5
  * @param {string} result 
  */
 

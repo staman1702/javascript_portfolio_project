@@ -54,6 +54,7 @@ header {
     text-align: center;
 }
 
+/*helps keep visual track of player and computer choices */
 .active,
 .control:hover {
     background-color: red;
