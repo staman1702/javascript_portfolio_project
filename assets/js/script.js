@@ -41,7 +41,12 @@ function checkWinner(computerChoice, playerChoice) {
     let player = choices[playerChoice];
     let computer = choices[computerChoice];
 
-    if (player === "rock") {
+    if (player === computer) {
+        document.getElementById("messages").innerText = "It's a tie.";
+        return "tie";
+    }
+
+    else if (player === "rock") {
         if (computer === "paper") {
             document.getElementById("messages").innerText = "Paper covers rock. You lose...";
             return "loss";
@@ -105,7 +110,8 @@ function checkWinner(computerChoice, playerChoice) {
         }
     }
 
-    else if (player === "spock") {
+    // player === "spock"
+    else {
         if (computer === "rock") {
             document.getElementById("messages").innerText = "Spock evaporates rock. You win!";
             return "win";
@@ -120,13 +126,6 @@ function checkWinner(computerChoice, playerChoice) {
             return "loss";
         }
     }
-
-    // player === computer
-    else {
-        document.getElementById("messages").innerText = "It's a tie.";
-        return "tie";
-    }
-
 }
 
 
