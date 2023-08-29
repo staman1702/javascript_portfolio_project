@@ -1,6 +1,10 @@
+// game-area section variable
 const choices = ["rock", "paper", "scissors", "lizard", "spock"];
+
+// score-area section variable
 const btns = document.getElementsByClassName("control");
 
+// event listener for player's choices
 for (var i = 0; i < btns.length; i++) {
     btns[i].addEventListener("click", function () {
         var current = document.getElementsByClassName("active");
@@ -16,6 +20,8 @@ for (var i = 0; i < btns.length; i++) {
 /**
  * Gets the playerChoice from event listener, generates computerChoice
  * and returns the result from checkWinner function
+ * @param {number} playerChoice 
+ * @returns {string} result
  */
 function playGame(playerChoice) {
 
@@ -36,6 +42,9 @@ function playGame(playerChoice) {
 /**
  * Gets the playerChoice and the computerChoice
  * and returns the win/loss and corresponding message
+ * @param {number} computerChoice 
+ * @param {number} playerChoice 
+ * @returns {string}
  */
 function checkWinner(computerChoice, playerChoice) {
 
@@ -134,6 +143,7 @@ function checkWinner(computerChoice, playerChoice) {
 /**
  * Gets the result
  * and increments the score
+ * @param {string} result 
  */
 
 function updateScore(result) {
