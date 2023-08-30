@@ -1,39 +1,76 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# ROCK, PAPER, SCISSORS, LIZARD, SPOCK
 
-Welcome,
+Rock, Paper, Scissors, Lizard, Spock is a student-made website that lets you pass time and have some carefree fun playing the modern version of the good ol' classic Rock, Paper, Scissors. It's designed for single play only and declares a winner once one sides gets 5 wins. User is faced with 5 choices, while computers choice is random. At any point player can reset the score and start over.
 
-This is the Code Institute student template for Codeanywhere. If you are using Gitpod then you need [this template](https://github.com/Code-Institute-Org/gitpod-full-template) instead.  We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Codeanywhere and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **July 26th, 2023**
+![Responsive](assets/images/readme_ss/am_i_responsive.webp)
 
-## Codeanywhere Reminders
+## User Experience (UX)
 
-To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere, in the terminal, type:
+### User stories
 
-`python3 -m http.server`
+First Time Visitor Goals
 
-A button should appear to click: _Open Preview_ or _Open Browser_.
+- Introducing player with advanced level of Rock, Paper, Scissors.
+- Providing simple and self-explanatory entertainment.
+- Enjoying the game of chance against randomly generated choices.
+- Ability to restart game at any point.
 
-To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere with no-cache, you can use this alias for `python3 -m http.server`.
+Frequent User Goals
 
-`http_server`
+- Reliving the joy of first visit.
+- Getting more aquinted with rules of the game.
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+## Features
 
-A button should appear to click: _Open Preview_ or _Open Browser_.
+### Header
 
-In Codeanywhere you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+- Featured at the top of the page, the header displays the name of the game.
 
-To log into the Heroku toolbelt CLI:
+![Header](assets/images/readme_ss/header.webp)
 
-1. Log in to your Heroku account and go to _Account Settings_ in the menu under your avatar.
-2. Scroll down to the _API Key_ and click _Reveal_
-3. Copy the key
-4. In Codeanywhere, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+### Game Area
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+- Player's playing area is on the left side, while computer's area is on the right.
+- Player's area consists of options to choose from: Rock, Paper, Scissors, Lizard & Spock. These options are interactive buttons that change color when hovered over.
+- To prevent player confusion computer's options are disabled buttons.
+- Every time a choice is made button will stay coloured, same goes for the computer's choice.
 
----
+![result-area](assets/images/readme_ss/dub-explore.webp)
 
-Happy coding!
+### Result Area
+
+- This section is composed of message, player's score count, computer's score count and Play New Game button.
+- Message instructs player and displays outcome of the last round played.
+- Scores can only go up to 5.
+- Play new game button resets the scores to 0 and resets visuals of highlighted choice.
+- Once the game finishes, button changes it's content and declares a winner.
+  
+![result-area](assets/images/readme_ss/dub-explore.webp)
+
+## Testing
+
+- I have confirmed that project is responsive, looks good and functions as intended on all standard screens.
+- I have confirmed that all posible choices give proper outcomes.
+- I have confirmed that hover action works.
+- I have confirmed that all buttons works as intended.
+
+### Validator Testing
+
+- W3C HTML validator returns no errors.
+- W3C CSS validator returns no errors.
+- I used lighthouse in retools.
+
+![Lighthouse](assets/images/readme_ss/lighthouse.webp)
+
+## Deployment
+
+- Site was deployed to GitHub pages
+- The live link is available here - [ROCK PAPER SCISSORS LIZARD SPOCK](https://staman1702.github.io/javascript_portfolio_project/)
+
+## Credits
+
+- [Google Fonts:](https://fonts.google.com/) Font family "Roboto" was used on page.
+- [Font Awesome:](https://fontawesome.com/) Used in Game-area section to add icons.
+- [Am I Responsive:](http://ami.responsivedesign.is) Was used to check responsiveness of page.
+- [Free Convert:](https://www.freeconvert.com/) Converting PNG and JPEG images to WEBP.

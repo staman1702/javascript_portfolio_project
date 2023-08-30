@@ -19,7 +19,7 @@
     </header>
     <section class="game-area">
       <div id="player-area">
-        <p>Make a choice:</p>
+        <h2>Make a choice:</h2>
         <button aria-label="Rock" data-choice="0" class="control">
           Rock <i class="fa-solid fa-hand-back-fist"></i>
         </button>
@@ -37,7 +37,7 @@
         </button>
       </div>
       <div id="computer-area">
-        <p>Your opponent:</p>
+        <h2>Your opponent:</h2>
         <button aria-label="Rock" data-choice="0" class="response" disabled>
           Rock <i class="fa-solid fa-hand-back-fist"></i>
         </button>
@@ -57,13 +57,13 @@
     </section>
 
     <section class="score-area">
-      <div id="messages">Start the game by making your choice. First one to reach 5 points wins.</div>
+      <div id="messages">
+        Start the game by making your choice. First one to reach 5 points wins.
+      </div>
       <div class="scores">
         <h3>Your score: <span id="player-score">0</span></h3>
         <h3>Computer score: <span id="computer-score">0</span></h3>
-        <button id="NewGame">
-            Click to start New Game</i>
-        </button>
+        <button id="NewGame">Click to start New Game</button>
       </div>
     </section>
     <script src="assets/js/script.js"></script>

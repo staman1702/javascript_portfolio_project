@@ -77,9 +77,7 @@ function checkWinner(computerChoice, playerChoice) {
     if (player === computer) {
         message.innerText = "It's a tie. Play the next round!";
         return "tie";
-    }
-
-    else if (player === "rock") {
+    } else if (player === "rock") {
         if (computer === "paper") {
             message.innerText = "Paper covers rock. You lose this round...";
             return "loss";
@@ -93,9 +91,7 @@ function checkWinner(computerChoice, playerChoice) {
             message.innerText = "Spock evaporates rock. You lose this round...";
             return "loss";
         }
-    }
-
-    else if (player === "paper") {
+    } else if (player === "paper") {
         if (computer === "rock") {
             message.innerText = "Paper covers rock. You win this round!";
             return "win";
@@ -109,9 +105,7 @@ function checkWinner(computerChoice, playerChoice) {
             message.innerText = "Paper disproves spock. You win this round!";
             return "win";
         }
-    }
-
-    else if (player === "scissors") {
+    } else if (player === "scissors") {
         if (computer === "rock") {
             message.innerText = "Rock crushes scissors. You lose this round...";
             return "loss";
@@ -125,9 +119,7 @@ function checkWinner(computerChoice, playerChoice) {
             message.innerText = "Spock smashes scissors. You lose this round...";
             return "loss";
         }
-    }
-
-    else if (player === "lizard") {
+    } else if (player === "lizard") {
         if (computer === "rock") {
             message.innerText = "Rock crushes lizard. You lose this round...";
             return "loss";
@@ -176,13 +168,9 @@ function updateScore(result) {
 
     if (outcome === "win") {
         document.getElementById("player-score").innerText = ++playerScore;
-    }
-
-    else if (outcome === "loss") {
+    } else if (outcome === "loss") {
         document.getElementById("computer-score").innerText = ++computerScore;
-    }
-
-    else {
+    } else {
 
     };
 
@@ -193,8 +181,7 @@ function updateScore(result) {
 
         if (computerScore == 5) {
             newGame.innerHTML = "Computer won the Game. Click to start New Game";
-        }
-        else {
+        } else {
             newGame.innerHTML = "You won the Game. Click to start New Game";
         }
     }
